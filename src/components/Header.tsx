@@ -15,7 +15,7 @@ const Header: React.FC = () => {
           </div>
         </div>
         <div className="hidden md:flex items-center space-x-6 text-sm font-medium">
-          <span className="bg-emerald-600/50 px-3 py-1 rounded-full text-xs border border-emerald-400/30">Expert AI Advice</span>
+          <span className="bg-emerald-600/50 px-3 py-1 rounded-full text-xs border border-emerald-400/30">Gemini 3 active</span>
         </div>
       </div>
     </header>

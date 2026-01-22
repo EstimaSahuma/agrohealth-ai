@@ -1,73 +1,84 @@
-# React + TypeScript + Vite
+# 🌱 PlantHealth
+### AI-Powered Plant Disease, Pest & Deficiency Detection using Gemini 3
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+PlantHealth is a web-based AI application that helps farmers, gardeners, and agricultural practitioners identify plant pests, diseases, and nutrient deficiencies using images or videos.  
+The system uses **Gemini 3 exclusively** to analyze visual inputs and provide clear, actionable recommendations.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 What is PlantHealth?
 
-## React Compiler
+PlantHealth transforms a simple plant photo or video into a **complete plant health report**, including:
+- Plant identification (when possible)
+- Detection of pests, diseases, or nutrient deficiencies
+- Explanation of visible symptoms
+- Severity assessment (Low / Medium / High)
+- Step-by-step treatment plan
+- Prevention recommendations
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+The goal is to make plant diagnostics **accessible, fast, and practical**, especially in regions where access to agronomic experts is limited.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🧠 Powered by Gemini 3
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+This project was built **exclusively using Google Gemini 3**, leveraging its:
+- Multimodal vision capabilities (image & video analysis)
+- Reasoning and contextual understanding
+- Natural language generation for clear explanations and instructions
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+No other AI models or external ML services are used.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+---
+
+## 🖼️ How It Works
+
+1. The user uploads one or more plant images or a short video
+2. The backend sends the media to Gemini 3 for analysis
+3. Gemini 3:
+   - Identifies the plant (if possible)
+   - Detects pests, diseases, or deficiencies
+   - Analyzes visible symptoms
+   - Assesses severity
+   - Generates treatment and prevention steps
+4. The results are displayed in a simple, user-friendly interface
+
+---
+
+## 🛠️ Built With
+
+- **Gemini 3**
+- **Gemini Vision API**
+- **JavaScript**
+- **TypeScript**
+- **React**
+- **Node.js**
+- **Express.js**
+- **HTML5**
+- **CSS3**
+- **REST API**
+
+---
+
+## 📁 Project Structure
+
+```text
+planthealth/
+├── backend/
+│   ├── server.js
+│   ├── routes/
+│   │   └── analyze.js
+│   ├── services/
+│   │   └── geminiService.js
+│   └── .env.example
+├── frontend/
+│   ├── src/
+│   │   ├── components/
+│   │   ├── pages/
+│   │   └── App.tsx
+│   └── package.json
+├── prompts/
+│   └── plant_analysis_prompt.txt
+├── README.md
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
