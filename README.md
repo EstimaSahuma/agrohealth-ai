@@ -82,3 +82,64 @@ planthealth/
 ├── README.md
 ```
 
+## 🧪 Example Gemini 3 Prompt
+You are an expert agronomist and plant pathologist.
+
+Analyze the provided plant image or video.
+
+Tasks:
+1. Identify the plant species if possible
+2. Detect pests, diseases, or nutrient deficiencies
+3. Explain visible symptoms
+4. Assess severity (low, medium, high)
+5. Provide a step-by-step treatment plan
+6. Suggest prevention measures
+
+Use clear, simple language suitable for farmers.
+
+## ⚙️ Running the Project Locally
+### 1️⃣ Clone the repository
+``` 
+git clone https://github.com/your-username/planthealth.git
+cd planthealth
+```
+
+### 2️⃣ Backend setup
+``` 
+cd backend
+npm install
+cp .env.example .env
+npm run dev
+```
+Add your Gemini 3 API key to the .env file.
+
+### 3️⃣ Frontend setup
+``` 
+cd ../frontend
+npm install
+npm run dev
+```
+
+## 🧩 Challenges Faced
+- Handling unclear or low-quality images without generating incorrect diagnoses
+- Designing prompts that encourage Gemini 3 to explain uncertainty instead of guessing
+- Translating complex agronomic knowledge into simple, actionable steps
+- Balancing scope and time during a hackathon environment
+
+## 🏆 Accomplishments
+- Built a fully functional multimodal AI system using Gemini 3 only
+- Delivered actionable, step-by-step plant treatment recommendations
+- Designed a farmer-friendly interface for non-technical users- 
+- Demonstrated real-world agricultural impact using generative AI
+
+## 🔮 What’s Next for PlantHealth
+- Mobile app support for in-field diagnostics
+- Region- and climate-specific recommendations
+- Crop history tracking and monitoring
+- Offline or low-connectivity support
+- Collaboration with agricultural institutions for validation
+
+## 🌍 Impact
+
+PlantHealth aims to reduce crop losses, improve food security, and empower farmers with AI-driven insights — using nothing more than a smartphone camera and Gemini 3.
+
